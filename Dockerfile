@@ -1,1 +1,3 @@
-create image and container here then create pipeline in .yml using container!!
+create docker files, then image then container here 
+FROM ...
+https://hub.docker.com/search?q=IMAGE&type=image - IMAGE TEMPlates I could use here 
