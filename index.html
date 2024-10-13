@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World</title>
+    <!-- Google Fonts - Graffiti Style -->
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1d;
+            color: #ffffff;
+            font-family: 'Freckle Face', cursive;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 80px;
+            color: #ff6347; /* Vivid Tomato Red */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), 6px 6px 12px #ffeb3b; /* Graffiti-style glow */
+            letter-spacing: 5px;
+            animation: bounce 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+    </style>
     <script>
         // This JavaScript will run when the page loads
         window.onload = function() {
