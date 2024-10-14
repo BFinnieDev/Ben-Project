@@ -1,28 +1,21 @@
-name: Java Build Pipeline
+name: Deploy HTML Site
 
-# Trigger the pipeline on push to the 'develop' branch or on pull requests targeting it
+# Trigger the workflow on push to the main branch
 on:
   push:
     branches:
-      - develop    # Run on pushes to the 'develop' branch
-  pull_request:
-    branches:
-      - develop    # Run on pull requests targeting the 'develop' branch
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'  # Set Java version to 11
-
-      - name: Compile Java files
-        run: |
-          mkdir -p out
-          javac -d out $(find ./src/main/java -name "*.java")  # Compile only main classes
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Root directory of your project where index.html is located
